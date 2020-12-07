@@ -14,7 +14,7 @@ namespace EFGetStarted
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Post>().Property<DateTime>("CreatedOn").HasDefaultValueSql("now()");
+            builder.Entity<Post>().Property<DateTimeOffset>("CreatedOn").HasDefaultValueSql("now()");
         }
     }
 
