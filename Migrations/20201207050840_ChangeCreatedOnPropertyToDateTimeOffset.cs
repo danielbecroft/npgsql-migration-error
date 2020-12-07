@@ -13,7 +13,6 @@ namespace EFGetStarted.Migrations
                 nullable: false,
                 defaultValueSql: "now()",
                 oldClrType: typeof(DateTime),
-                oldType: "timestamp without time zone",
                 oldDefaultValueSql: "now()");
         }
 
