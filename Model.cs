@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFGetStarted
@@ -10,6 +11,11 @@ namespace EFGetStarted
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseNpgsql("Server=localhost;Database=blogs;Port=5432;User Id=postgres;Password=postgres");
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Post>().Property<DateTime>("CreatedOn").HasDefaultValueSql("now()");
+        }
     }
 
     public class Blog
